@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class VehicleHelper : MonoBehaviour
 {
-    [SerializeField] private KeyCode engineKey = KeyCode.F;
+
     [SerializeField] private Transform steeringWheel;
     [SerializeField] private AudioSource engineIdle;
+    [SerializeField] private AudioClip honk;
     [SerializeField] private float maxTurnAngle = 1080f;
     [SerializeField] private RearWheelDrive rearWheelDrive;
+    [SerializeField] private VehicleSwap vehicleSwap;
     [SerializeField] public bool isEngineOn = false;
-    [SerializeField] public bool isInsideCar = false; //Default true
+    [SerializeField] public bool isInsideCar = true;
+    [SerializeField] public bool canLeaveCar = false;
+
+    private void Start()
+    {
+        GameController.SetCursor(false, true);
+    }
 
     private void Update()
     {
@@ -18,7 +26,7 @@ public class VehicleHelper : MonoBehaviour
 
         steeringWheel.localEulerAngles = Vector3.back * Mathf.Clamp((Input.GetAxis("Horizontal") * 100), -maxTurnAngle, maxTurnAngle);
         
-        if(Input.GetKeyDown(engineKey))
+        if(Input.GetKeyDown(KeyBinds.engine))
         {
             isEngineOn = !isEngineOn;
             if(isEngineOn) {
@@ -29,6 +37,19 @@ public class VehicleHelper : MonoBehaviour
                 engineIdle.Stop();
                 rearWheelDrive.enabled = false;
             }
+        }
+
+        if (Input.GetKeyDown(KeyBinds.exit))
+        {
+            if(isEngineOn == false && canLeaveCar == true)
+            {
+                vehicleSwap.SwapPositions(false);
+            }
+        }
+
+        if(Input.GetKeyDown(KeyBinds.horn))
+        {
+            AudioManager.instance.PlayAudio(honk, 1.0f);
         }
     }
 }

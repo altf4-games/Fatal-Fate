@@ -112,7 +112,7 @@ MonoBehaviour:
     m_Bits: 256
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 1
+  antialiasingMode: 3
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -234,7 +234,7 @@ MonoBehaviour:
     MaximumX: 90
     smooth: 0
     smoothTime: 5
-    lockCursor: 1
+    lockCursor: 0
   m_UseFovKick: 1
   m_FovKick:
     Camera: {fileID: 0}
@@ -454,6 +454,10 @@ PrefabInstance:
     - target: {fileID: 1339396707686934, guid: f24f3e50bab462f449cd4ade929751df, type: 3}
       propertyPath: m_Name
       value: FPSHands
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339396707686934, guid: f24f3e50bab462f449cd4ade929751df, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4133307278969550, guid: f24f3e50bab462f449cd4ade929751df, type: 3}
       propertyPath: m_LocalRotation.x

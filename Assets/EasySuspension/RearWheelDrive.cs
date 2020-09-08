@@ -7,6 +7,7 @@ public class RearWheelDrive : MonoBehaviour {
 
 	public float maxAngle = 30;
 	public float maxTorque = 300;
+	public float brakeTorque = 300;
 	public GameObject wheelShape;
 	public AudioSource carAccelerate;
 
@@ -25,6 +26,11 @@ public class RearWheelDrive : MonoBehaviour {
 				var ws = GameObject.Instantiate (wheelShape);
 				ws.transform.parent = wheel.transform;
 			}
+
+			if(wheel.transform.name == "a0r" || wheel.transform.name == "a1r")
+            {
+				wheel.transform.localScale = new Vector3(-1, 1, 1);
+            }
 		}
 	}
 
@@ -35,6 +41,8 @@ public class RearWheelDrive : MonoBehaviour {
 	{
 		float angle = maxAngle * Input.GetAxis("Horizontal");
 		float torque = maxTorque * Input.GetAxis("Vertical");
+		float bTorque = (Input.GetKey(KeyBinds.brake)) ? brakeTorque : 0;
+
 
 		if (torque >= 25f)
         {
@@ -66,7 +74,7 @@ public class RearWheelDrive : MonoBehaviour {
 				shapeTransform.position = p;
 				shapeTransform.rotation = q;
 			}
-
+			wheel.brakeTorque = bTorque;
 		}
 	}
 }

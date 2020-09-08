@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class VehicleSwap : MonoBehaviour
 {
-    [SerializeField] private KeyCode exitCar = KeyCode.Escape;
     [SerializeField] private GameObject characterA;
     [SerializeField] private Transform exitPos;
     [SerializeField] private GameObject vehicleCamera;
@@ -13,6 +12,7 @@ public class VehicleSwap : MonoBehaviour
     [SerializeField] public bool isLocked = false;
     [SerializeField] private GameObject[] realWheels;
     [SerializeField] private GameObject[] driveWheels;
+    [SerializeField] private Light[] lights;
 
     public void SwapPositions(bool isInsideCar)
     {
@@ -32,6 +32,10 @@ public class VehicleSwap : MonoBehaviour
             {
                 wheel.SetActive(true);
             }
+            foreach (Light light in lights)
+            {
+                light.enabled = true;
+            }
         } 
         else 
         {
@@ -47,6 +51,10 @@ public class VehicleSwap : MonoBehaviour
             foreach (GameObject wheel in driveWheels)
             {
                 wheel.SetActive(false);
+            }
+            foreach (Light light in lights)
+            {
+                light.enabled = false;
             }
         }
     }

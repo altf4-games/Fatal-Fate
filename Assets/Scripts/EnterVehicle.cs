@@ -11,6 +11,7 @@ public class EnterVehicle : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             vehicleSwap.SwapPositions(true);
+            Destroy(this);
         }
     }
 }
