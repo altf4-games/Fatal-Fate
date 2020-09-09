@@ -1046,10 +1046,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.33
   m_SuspensionSpring:
-    spring: 21770.674
-    damper: 3870.3423
+    spring: 21770.666
+    damper: 3870.3406
     targetPosition: 0.5
-  m_SuspensionDistance: 0.24222225
+  m_SuspensionDistance: 0.24222223
   m_ForceAppPointDistance: 0.5312781
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1151,7 +1151,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2707568103025500494}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 769c2cffd07404268b9e452d0f57f8e3, type: 3}
   m_Name: 
@@ -1159,6 +1159,7 @@ MonoBehaviour:
   maxAngle: 30
   maxTorque: 180
   brakeTorque: 300
+  canAccelerate: 1
   wheelShape: {fileID: 2337791335819500618, guid: 8ebe2b3f9e2b0a341a1f7e377d7ec0b1,
     type: 3}
   carAccelerate: {fileID: 214057493}
@@ -1214,7 +1215,7 @@ MonoBehaviour:
   maxTurnAngle: 1080
   rearWheelDrive: {fileID: 2707568103025500495}
   vehicleSwap: {fileID: 927743367}
-  isEngineOn: 0
+  isEngineOn: 1
   isInsideCar: 1
   canLeaveCar: 0
 --- !u!1 &2707568103083887018
@@ -1351,10 +1352,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.33
   m_SuspensionSpring:
-    spring: 20917.533
-    damper: 3718.6726
+    spring: 20917.547
+    damper: 3718.675
     targetPosition: 0.5
-  m_SuspensionDistance: 0.24222223
+  m_SuspensionDistance: 0.24222225
   m_ForceAppPointDistance: 0.5312781
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1412,10 +1413,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.33
   m_SuspensionSpring:
-    spring: 19582.46
-    damper: 3481.3262
+    spring: 19582.45
+    damper: 3481.3242
     targetPosition: 0.5
-  m_SuspensionDistance: 0.24222223
+  m_SuspensionDistance: 0.24222222
   m_ForceAppPointDistance: 0.5312781
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1473,10 +1474,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.33
   m_SuspensionSpring:
-    spring: 18729.324
-    damper: 3329.6575
+    spring: 18729.328
+    damper: 3329.6582
     targetPosition: 0.5
-  m_SuspensionDistance: 0.24222222
+  m_SuspensionDistance: 0.24222223
   m_ForceAppPointDistance: 0.5312781
   m_Mass: 20
   m_WheelDampingRate: 0.25

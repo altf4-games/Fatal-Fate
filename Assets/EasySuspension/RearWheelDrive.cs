@@ -8,6 +8,7 @@ public class RearWheelDrive : MonoBehaviour {
 	public float maxAngle = 30;
 	public float maxTorque = 300;
 	public float brakeTorque = 300;
+	public bool canAccelerate = true;
 	public GameObject wheelShape;
 	public AudioSource carAccelerate;
 
@@ -40,8 +41,8 @@ public class RearWheelDrive : MonoBehaviour {
 	public void Update()
 	{
 		float angle = maxAngle * Input.GetAxis("Horizontal");
-		float torque = maxTorque * Input.GetAxis("Vertical");
-		float bTorque = (Input.GetKey(KeyBinds.brake)) ? brakeTorque : 0;
+		float torque = (canAccelerate == true) ? maxTorque * Input.GetAxis("Vertical") : 0;
+		float bTorque = (Input.GetKey(KeyBinds.brake) && canAccelerate) ? brakeTorque : 0;
 
 
 		if (torque >= 25f)
