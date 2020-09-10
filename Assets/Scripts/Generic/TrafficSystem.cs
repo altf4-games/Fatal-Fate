@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class TrafficSystem : MonoBehaviour
 {
+    [SerializeField] private int maxTraffic = 30;
     [SerializeField] private GameObject[] prefabs;
     [SerializeField] private Transform[] lanes = new Transform[4];
-    [SerializeField] private int maxTraffic = 30;
-    [HideInInspector] public List<GameObject> traffic;
+    [SerializeField] public List<GameObject> traffic;
 
     private void Start()
     {
@@ -27,7 +27,8 @@ public class TrafficSystem : MonoBehaviour
                 Vector3 spawnPoint = designatedLane.GetChild(1).transform.position;
 
                 Collider[] hitColliders = Physics.OverlapSphere(spawnPoint, 1f);
-                if(hitColliders.Length == 0)
+                
+                if (hitColliders.Length == 0)
                 {
                     GameObject obj = Instantiate(prefabs[Random.Range(0, prefabs.Length)]);
                     obj.GetComponent<VehicleBase>().path = designatedLane;

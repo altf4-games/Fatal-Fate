@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3858193743122786065}
   - component: {fileID: 3858193743122786071}
   - component: {fileID: 3858193743122786064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 3858193743913508697}
   - component: {fileID: 3858193743913508703}
   - component: {fileID: 3858193743913508696}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3858193744060838785}
   - component: {fileID: 3858193744066620999}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Rear_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3858193744060838787}
   - component: {fileID: 3858193744066620993}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Rear_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3858193744060838789}
   - component: {fileID: 3858193744066620995}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Front_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3858193744060838791}
   - component: {fileID: 3858193744066620997}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Front_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 3858193744054894851}
   - component: {fileID: 3858193744061198249}
   - component: {fileID: 3858193744061198250}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Van_2A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,6 +448,7 @@ Transform:
   - {fileID: 3858193744060838785}
   - {fileID: 3858193744060838787}
   - {fileID: 1364940331616429154}
+  - {fileID: 5980285776074350899}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -539,7 +540,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3858193744061198251}
   serializedVersion: 2
-  m_Mass: 1500
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -570,7 +571,11 @@ MonoBehaviour:
     steering: 0
   maxMotorTorque: 280
   maxSteeringAngle: 30
+  sensorLocation: {fileID: 5980285776074350899}
   path: {fileID: 0}
+  collision:
+    serializedVersion: 2
+    m_Bits: 1025
   tf: {fileID: 0}
 --- !u!1 &3858193744804032833
 GameObject:
@@ -583,7 +588,7 @@ GameObject:
   - component: {fileID: 3858193744804032832}
   - component: {fileID: 3858193744804032838}
   - component: {fileID: 3858193744804032839}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +667,7 @@ GameObject:
   - component: {fileID: 3858193744983733263}
   - component: {fileID: 3858193744983733261}
   - component: {fileID: 3858193744983733262}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -730,6 +735,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &6190954882509864367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5980285776074350899}
+  m_Layer: 10
+  m_Name: Sensor Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5980285776074350899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190954882509864367}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.04, z: 3.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3858193744060838795}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8014292087614939258
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1364940331616429154}
   - component: {fileID: 6479790446662233251}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3688120423029950210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 814101737268804284}
+  m_Layer: 10
+  m_Name: Sensor Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &814101737268804284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3688120423029950210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.17, z: 3.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5093834279844874094}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5093834279844780864
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5093834279844874080}
   - component: {fileID: 5093834279830706854}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Front_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5093834279844874082}
   - component: {fileID: 5093834279830706850}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Front_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5093834279844874084}
   - component: {fileID: 5093834279830706852}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Rear_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5093834279844874086}
   - component: {fileID: 5093834279830706848}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Rear_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +297,7 @@ GameObject:
   - component: {fileID: 5093834279842690534}
   - component: {fileID: 5093834279844780880}
   - component: {fileID: 5093834279844780879}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SUV_1A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,6 +320,7 @@ Transform:
   - {fileID: 5093834279844874084}
   - {fileID: 5093834279844874086}
   - {fileID: 2528890227268498543}
+  - {fileID: 814101737268804284}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -412,7 +443,11 @@ MonoBehaviour:
     steering: 0
   maxMotorTorque: 300
   maxSteeringAngle: 30
+  sensorLocation: {fileID: 814101737268804284}
   path: {fileID: 0}
+  collision:
+    serializedVersion: 2
+    m_Bits: 1025
   tf: {fileID: 0}
 --- !u!1 &5093834280074267634
 GameObject:
@@ -425,7 +460,7 @@ GameObject:
   - component: {fileID: 5093834280074267635}
   - component: {fileID: 5093834280074267637}
   - component: {fileID: 5093834280074267636}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +539,7 @@ GameObject:
   - component: {fileID: 5093834280303268792}
   - component: {fileID: 5093834280303268794}
   - component: {fileID: 5093834280303268793}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +618,7 @@ GameObject:
   - component: {fileID: 5093834280477744553}
   - component: {fileID: 5093834280477744555}
   - component: {fileID: 5093834280477744554}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +697,7 @@ GameObject:
   - component: {fileID: 5093834281262333636}
   - component: {fileID: 5093834281262333638}
   - component: {fileID: 5093834281262333637}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,7 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2528890227268498543}
   - component: {fileID: 8493676792765290932}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

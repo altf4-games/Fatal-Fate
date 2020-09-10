@@ -8,9 +8,9 @@ public class RearWheelDrive : MonoBehaviour {
 	public float maxAngle = 30;
 	public float maxTorque = 300;
 	public float brakeTorque = 300;
-	public bool canAccelerate = true;
 	public GameObject wheelShape;
 	public AudioSource carAccelerate;
+	[HideInInspector] public bool canAccelerate = true;
 
 	// here we find all the WheelColliders down in the hierarchy
 	public void Start()

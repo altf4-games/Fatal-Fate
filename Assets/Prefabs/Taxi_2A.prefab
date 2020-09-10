@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8356163517848344690}
   - component: {fileID: 8175114127916595409}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,6 +92,36 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &4658583050362492878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6229066427654836704}
+  m_Layer: 10
+  m_Name: Sensor Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6229066427654836704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658583050362492878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.788, z: 3.083}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6357828913278053548}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6357828913277890688
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6357828913278053536}
   - component: {fileID: 6357828913275449698}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Front_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6357828913278053538}
   - component: {fileID: 6357828913275449700}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Front_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6357828913278053540}
   - component: {fileID: 6357828913275449702}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Rear_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6357828913278053542}
   - component: {fileID: 6357828913275449696}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Rear_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +389,7 @@ GameObject:
   - component: {fileID: 6357828913279983140}
   - component: {fileID: 6357828913277890698}
   - component: {fileID: 6357828913277890701}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Taxi_2A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,6 +412,7 @@ Transform:
   - {fileID: 6357828913278053542}
   - {fileID: 6357828913278053540}
   - {fileID: 8356163517848344690}
+  - {fileID: 6229066427654836704}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -505,7 +536,11 @@ MonoBehaviour:
     steering: 0
   maxMotorTorque: 300
   maxSteeringAngle: 30
+  sensorLocation: {fileID: 6229066427654836704}
   path: {fileID: 0}
+  collision:
+    serializedVersion: 2
+    m_Bits: 1025
   tf: {fileID: 0}
 --- !u!1 &6357828913394019820
 GameObject:
@@ -518,7 +553,7 @@ GameObject:
   - component: {fileID: 6357828913394019821}
   - component: {fileID: 6357828913394019819}
   - component: {fileID: 6357828913394019818}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +632,7 @@ GameObject:
   - component: {fileID: 6357828914679705839}
   - component: {fileID: 6357828914679705837}
   - component: {fileID: 6357828914679705836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,7 +711,7 @@ GameObject:
   - component: {fileID: 6357828914720776409}
   - component: {fileID: 6357828914720776423}
   - component: {fileID: 6357828914720776422}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +790,7 @@ GameObject:
   - component: {fileID: 6357828914885533009}
   - component: {fileID: 6357828914885533023}
   - component: {fileID: 6357828914885533022}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}

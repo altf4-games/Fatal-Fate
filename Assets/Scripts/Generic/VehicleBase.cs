@@ -7,8 +7,11 @@ public class VehicleBase : MonoBehaviour
     [SerializeField] private List<AxleInfo> axleInfos;
     [SerializeField] private float maxMotorTorque = 280; 
     [SerializeField] private float maxSteeringAngle = 30;
-    [HideInInspector] public Transform path;
+    [SerializeField] private Transform sensorLocation;
+    [SerializeField] public Transform path;
+    [SerializeField] private LayerMask collision;
     [HideInInspector] public TrafficSystem tf;
+    [HideInInspector] private bool initialForce = true;
 
     private List<Transform> nodes;
     private int currectNode = 0;
@@ -50,6 +53,19 @@ public class VehicleBase : MonoBehaviour
 
         maxMotorTorque = Random.Range(maxMotorTorque - 40, maxMotorTorque + 65);
         maxBrakeTorque = maxMotorTorque * 2;
+
+        if (initialForce)
+        {
+            InitalForce();
+            tf = transform.parent.GetComponent<TrafficSystem>();
+        }
+    }
+
+    private void InitalForce()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        wheelRL.motorTorque = maxMotorTorque * rb.mass * 2; 
+        wheelRR.motorTorque = maxMotorTorque * rb.mass * 2;
     }
 
     public void FixedUpdate()
@@ -59,18 +75,16 @@ public class VehicleBase : MonoBehaviour
         ApplyLocalPositionToVisuals(wheelRL);
         ApplyLocalPositionToVisuals(wheelRR);
 
+        AvoidCollision();
         ApplySteer();
         Drive();
         CheckWaypointDistance();
         DestroyOnReach();
-
-        AvoidCollision(wheelFL);
-        //AvoidCollision(wheelFR);
     }
 
-    private void AvoidCollision(WheelCollider wheels)
+    private void AvoidCollision()
     {
-        if(Physics.Raycast(wheels.transform.position,Vector3.forward,12))
+        if(Physics.Raycast(sensorLocation.position, sensorLocation.forward,12, collision))
         {
             wheelRL.brakeTorque = maxBrakeTorque;
             wheelRR.brakeTorque = maxBrakeTorque;

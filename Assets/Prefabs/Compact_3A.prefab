@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3318502907336869824}
   - component: {fileID: 3318502907324832256}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Rear_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3318502907336869826}
   - component: {fileID: 3318502907324832258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Rear_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3318502907336869828}
   - component: {fileID: 3318502907324832260}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Front_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3318502907336869830}
   - component: {fileID: 3318502907324832262}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel_Front_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 3318502907330819394}
   - component: {fileID: 3318502907337104360}
   - component: {fileID: 3318502907337104363}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Compact_3A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,6 +286,7 @@ Transform:
   - {fileID: 3318502907336869824}
   - {fileID: 3318502907336869826}
   - {fileID: 197960381794897051}
+  - {fileID: 8015072817171527090}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -408,9 +409,42 @@ MonoBehaviour:
     steering: 0
   maxMotorTorque: 270
   maxSteeringAngle: 30
-  rayCastPoint: {fileID: 3318502907336869828}
+  sensorLocation: {fileID: 8015072817171527090}
   path: {fileID: 0}
+  collision:
+    serializedVersion: 2
+    m_Bits: 1025
   tf: {fileID: 0}
+--- !u!1 &8050302566187576639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8015072817171527090}
+  m_Layer: 10
+  m_Name: Sensor Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8015072817171527090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050302566187576639}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.85, z: 2.683}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3318502907336869834}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8895410041692764929
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 197960381794897051}
   - component: {fileID: 8151884663513690367}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +548,7 @@ GameObject:
   - component: {fileID: 9134914192282432230}
   - component: {fileID: 9134914192282432228}
   - component: {fileID: 9134914192282432231}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +627,7 @@ GameObject:
   - component: {fileID: 9134914192513189823}
   - component: {fileID: 9134914192513189821}
   - component: {fileID: 9134914192513189820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +706,7 @@ GameObject:
   - component: {fileID: 9134914193159444633}
   - component: {fileID: 9134914193159444639}
   - component: {fileID: 9134914193159444638}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +785,7 @@ GameObject:
   - component: {fileID: 9134914193370692240}
   - component: {fileID: 9134914193370692246}
   - component: {fileID: 9134914193370692241}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}

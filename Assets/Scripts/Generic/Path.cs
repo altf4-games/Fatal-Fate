@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 
 public class Path : MonoBehaviour {
 
     public Color lineColor;
-
     private List<Transform> nodes = new List<Transform>();
 
-    void OnDrawGizmosSelected() {
+    [DrawGizmo(GizmoType.NonSelected | GizmoType.Selected | GizmoType.Pickable)]
+    private void OnDrawGizmos()
+    { 
         Gizmos.color = lineColor;
 
         Transform[] pathTransforms = GetComponentsInChildren<Transform>();
