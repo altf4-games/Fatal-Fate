@@ -18,6 +18,8 @@ public class VehicleBase : MonoBehaviour
     private WheelCollider wheelRR;
     private float currentSpeed;
     private float maxSpeed = 100f;
+    private float maxBrakeTorque = 480f;
+    private bool isBreaking = false;
 
     private void Start()
     {
@@ -47,6 +49,7 @@ public class VehicleBase : MonoBehaviour
         }
 
         maxMotorTorque = Random.Range(maxMotorTorque - 40, maxMotorTorque + 65);
+        maxBrakeTorque = maxMotorTorque * 2;
     }
 
     public void FixedUpdate()
@@ -60,6 +63,25 @@ public class VehicleBase : MonoBehaviour
         Drive();
         CheckWaypointDistance();
         DestroyOnReach();
+
+        AvoidCollision(wheelFL);
+        //AvoidCollision(wheelFR);
+    }
+
+    private void AvoidCollision(WheelCollider wheels)
+    {
+        if(Physics.Raycast(wheels.transform.position,Vector3.forward,12))
+        {
+            wheelRL.brakeTorque = maxBrakeTorque;
+            wheelRR.brakeTorque = maxBrakeTorque;
+            isBreaking = true;
+        }
+        else
+        {
+            wheelRL.brakeTorque = 0;
+            wheelRR.brakeTorque = 0;
+            isBreaking = false;
+        }
     }
 
     private void ApplySteer()
@@ -73,6 +95,7 @@ public class VehicleBase : MonoBehaviour
 
     private void Drive()
     {
+        if (isBreaking) return;
         currentSpeed = 2 * Mathf.PI * wheelRR.radius * wheelRR.rpm * 60 / 1000;
 
         if (currentSpeed < maxSpeed)
@@ -102,7 +125,7 @@ public class VehicleBase : MonoBehaviour
         }
     }
 
-    public void ApplyLocalPositionToVisuals(WheelCollider collider)
+    private void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
         if (collider.transform.childCount == 0)
         {

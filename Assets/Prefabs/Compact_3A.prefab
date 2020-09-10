@@ -408,6 +408,7 @@ MonoBehaviour:
     steering: 0
   maxMotorTorque: 270
   maxSteeringAngle: 30
+  rayCastPoint: {fileID: 3318502907336869828}
   path: {fileID: 0}
   tf: {fileID: 0}
 --- !u!1 &8895410041692764929
