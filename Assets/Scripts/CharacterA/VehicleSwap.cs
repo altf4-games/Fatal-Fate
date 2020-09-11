@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Aura2API;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,17 +14,29 @@ public class VehicleSwap : MonoBehaviour
     [SerializeField] private GameObject[] realWheels;
     [SerializeField] private GameObject[] driveWheels;
     [SerializeField] private Light[] lights;
+    private AuraCamera fpsAura;
+    private AuraCamera carAura;
+
+    private void Start()
+    {
+        fpsAura = characterCamera.GetComponent<AuraCamera>();
+        carAura = vehicleCamera.GetComponent<AuraCamera>();
+    }
 
     public void SwapPositions(bool isInsideCar)
     {
         if (isLocked) return;
-        if(isInsideCar) 
+
+        if (isInsideCar) 
         {
             characterA.transform.parent = exitPos;
             vehicleCamera.SetActive(true);
             characterCamera.SetActive(false);
             characterA.SetActive(false);
             vehicleHelper.isInsideCar = true;
+            carAura.enabled = true;
+            fpsAura.enabled = false;
+
             foreach (GameObject wheel in realWheels) 
             {
                 wheel.SetActive(false);
@@ -34,7 +47,7 @@ public class VehicleSwap : MonoBehaviour
             }
             foreach (Light light in lights)
             {
-                light.enabled = true;
+                light.gameObject.SetActive(true);
             }
         } 
         else 
@@ -44,6 +57,9 @@ public class VehicleSwap : MonoBehaviour
             characterCamera.SetActive(true);
             vehicleCamera.SetActive(false);
             vehicleHelper.isInsideCar = false;
+            fpsAura.enabled = true;
+            carAura.enabled = false;
+
             foreach (GameObject wheel in realWheels) 
             {
                 wheel.SetActive(true);
@@ -54,7 +70,7 @@ public class VehicleSwap : MonoBehaviour
             }
             foreach (Light light in lights)
             {
-                light.enabled = false;
+                light.gameObject.SetActive(false);
             }
         }
     }

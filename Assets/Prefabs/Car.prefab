@@ -59,7 +59,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 200
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1472,10 +1472,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.33
   m_SuspensionSpring:
-    spring: 20917.467
-    damper: 3718.661
+    spring: 20917.463
+    damper: 3718.6602
     targetPosition: 0.5
-  m_SuspensionDistance: 0.24222223
+  m_SuspensionDistance: 0.24222225
   m_ForceAppPointDistance: 0.46409756
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1533,10 +1533,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.33
   m_SuspensionSpring:
-    spring: 19582.533
-    damper: 3481.3396
+    spring: 19582.53
+    damper: 3481.3386
     targetPosition: 0.5
-  m_SuspensionDistance: 0.24222223
+  m_SuspensionDistance: 0.24222226
   m_ForceAppPointDistance: 0.46409756
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1597,7 +1597,7 @@ WheelCollider:
     spring: 18729.252
     damper: 3329.645
     targetPosition: 0.5
-  m_SuspensionDistance: 0.24222223
+  m_SuspensionDistance: 0.24222222
   m_ForceAppPointDistance: 0.46409756
   m_Mass: 20
   m_WheelDampingRate: 0.25
