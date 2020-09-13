@@ -484,7 +484,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -504,7 +504,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1320937224}
   - component: {fileID: 1320937225}
-  - component: {fileID: 1556837722}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -538,7 +537,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9811321, g: 0.9149525, b: 0.7358491, a: 1}
-  m_Intensity: 2.39
+  m_Intensity: 2.6
   m_Range: 1.57
   m_SpotAngle: 154
   m_InnerSpotAngle: 21.80208
@@ -587,39 +586,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1556837722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320937223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f01d29d88278f45458d99e6b5199e920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  strength: 1
-  useScattering: 0
-  overrideScattering: 0
-  overridingScattering: 0.5
-  scatteringBias: 0
-  useColorTemperatureTint: 0
-  overrideColor: 0
-  overridingColor: {r: 1, g: 1, b: 1, a: 1}
-  useShadow: 1
-  useCookie: 1
-  cookieMapRenderTexture: {fileID: 0}
-  enableOutOfPhaseColor: 0
-  outOfPhaseColorStrength: 0.1
-  outOfPhaseColor: {r: 0, g: 1, b: 1, a: 1}
-  customDistanceFalloffThreshold: 0.5
-  customDistanceFalloffPower: 2
-  customCookieDistanceFalloffStartThreshold: 0.1
-  customCookieDistanceFalloffEndThreshold: 0.25
-  customCookieDistanceFalloffPower: 2
-  customAngularFalloffThreshold: 0.8
-  customAngularFalloffPower: 2
 --- !u!1 &1552076655
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +771,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731592203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.667, y: 0.64, z: 1.836}
+  m_LocalPosition: {x: -0.667, y: 0.64, z: 1.9809997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7702754295624195102}
@@ -862,15 +828,15 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 2.4394e-41, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
+  m_ShadowRadius: 31.92
   m_ShadowAngle: 0
 --- !u!114 &662952107
 MonoBehaviour:
@@ -886,8 +852,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strength: 1
   useScattering: 0
-  overrideScattering: 0
-  overridingScattering: 0.5
+  overrideScattering: 1
+  overridingScattering: 0.904
   scatteringBias: 0
   useColorTemperatureTint: 0
   overrideColor: 0
@@ -899,11 +865,11 @@ MonoBehaviour:
   outOfPhaseColorStrength: 0.1
   outOfPhaseColor: {r: 0, g: 1, b: 1, a: 1}
   customDistanceFalloffThreshold: 0.5
-  customDistanceFalloffPower: 2
+  customDistanceFalloffPower: 2.85
   customCookieDistanceFalloffStartThreshold: 0.1
   customCookieDistanceFalloffEndThreshold: 0.25
   customCookieDistanceFalloffPower: 2
-  customAngularFalloffThreshold: 0.8
+  customAngularFalloffThreshold: 1
   customAngularFalloffPower: 2
 --- !u!1 &2065972059
 GameObject:
@@ -931,7 +897,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065972059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.768, y: 0.64, z: 1.8360002}
+  m_LocalPosition: {x: 0.768, y: 0.64, z: 1.981}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7702754295624195102}
@@ -988,15 +954,15 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 2.4018e-41, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
+  m_ShadowRadius: 31.92
   m_ShadowAngle: 0
 --- !u!114 &682879871
 MonoBehaviour:
@@ -1012,8 +978,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strength: 1
   useScattering: 0
-  overrideScattering: 0
-  overridingScattering: 0.5
+  overrideScattering: 1
+  overridingScattering: 1
   scatteringBias: 0
   useColorTemperatureTint: 0
   overrideColor: 0
@@ -1024,12 +990,12 @@ MonoBehaviour:
   enableOutOfPhaseColor: 0
   outOfPhaseColorStrength: 0.1
   outOfPhaseColor: {r: 0, g: 1, b: 1, a: 1}
-  customDistanceFalloffThreshold: 0.5
-  customDistanceFalloffPower: 2
+  customDistanceFalloffThreshold: 0.673
+  customDistanceFalloffPower: 3.02
   customCookieDistanceFalloffStartThreshold: 0.1
   customCookieDistanceFalloffEndThreshold: 0.25
   customCookieDistanceFalloffPower: 2
-  customAngularFalloffThreshold: 0.8
+  customAngularFalloffThreshold: 1
   customAngularFalloffPower: 2
 --- !u!1 &2111192141
 GameObject:
@@ -1113,7 +1079,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1335,7 +1301,7 @@ MonoBehaviour:
   vehicleSwap: {fileID: 927743367}
   isEngineOn: 1
   isInsideCar: 1
-  canLeaveCar: 0
+  canLeaveCar: 1
   rr: {fileID: 2707568102947830793}
   rl: {fileID: 2707568103558189997}
 --- !u!1 &2707568103083887018
@@ -5517,6 +5483,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1552076656}
     m_Modifications:
+    - target: {fileID: 6060500050236515940, guid: 8959fe3a30c473847800b30e9a079eda,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6174268402153273250, guid: 8959fe3a30c473847800b30e9a079eda,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5582,8 +5553,19 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6174268402154809762, guid: 8959fe3a30c473847800b30e9a079eda,
+        type: 3}
+      propertyPath: m_Depth
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8959fe3a30c473847800b30e9a079eda, type: 3}
+--- !u!1 &508195701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6174268402153302914, guid: 8959fe3a30c473847800b30e9a079eda,
+    type: 3}
+  m_PrefabInstance: {fileID: 6174268402317547767}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &508424021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6174268402153273250, guid: 8959fe3a30c473847800b30e9a079eda,
@@ -5593,12 +5575,6 @@ Transform:
 --- !u!1 &508195703 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6174268402153302912, guid: 8959fe3a30c473847800b30e9a079eda,
-    type: 3}
-  m_PrefabInstance: {fileID: 6174268402317547767}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &508195701 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6174268402153302914, guid: 8959fe3a30c473847800b30e9a079eda,
     type: 3}
   m_PrefabInstance: {fileID: 6174268402317547767}
   m_PrefabAsset: {fileID: 0}

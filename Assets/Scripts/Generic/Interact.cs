@@ -31,9 +31,9 @@ public class Interact : MonoBehaviour
             if (Input.GetMouseButtonDown(KeyBinds.rmb))
             {
                 if(character == CharacterType.Murderer) {
-                    CharacterAInts();
+                    CharacterAInts(hit);
                 } else {
-                    CharacterBInts();
+                    CharacterBInts(hit);
                 }
             }
         }
@@ -45,15 +45,15 @@ public class Interact : MonoBehaviour
         }
     }
 
-    private void CharacterAInts()
+    private void CharacterAInts(RaycastHit hit)
     {
-        /*if (hit.transform.CompareTag("Door"))
+        if (hit.transform.CompareTag("Door"))
         {
             hit.transform.GetComponent<Door>().OpenDoor();
-        }*/
+        }
     }
 
-    private void CharacterBInts()
+    private void CharacterBInts(RaycastHit hit)
     {
         /*if (hit.transform.CompareTag("Door"))
         {
