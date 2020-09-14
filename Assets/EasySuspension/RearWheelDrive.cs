@@ -26,6 +26,7 @@ public class RearWheelDrive : MonoBehaviour {
 			{
 				var ws = GameObject.Instantiate (wheelShape);
 				ws.transform.parent = wheel.transform;
+				ws.transform.localScale = Vector3.one;
 			}
 
 			if(wheel.transform.name == "a0r" || wheel.transform.name == "a1r")
