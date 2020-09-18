@@ -7,6 +7,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] public GameObject movementKeys;
     [SerializeField] public GameObject brakeKeys;
     [SerializeField] public GameObject engineKey;
+    [SerializeField] public GameObject walletKey;
     [SerializeField] public GameObject exitKey;
 
     private void Start()

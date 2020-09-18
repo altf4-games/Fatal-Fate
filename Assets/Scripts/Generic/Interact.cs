@@ -24,8 +24,8 @@ public class Interact : MonoBehaviour
             if (hit.transform.GetComponent<Interactable>() != null)
             {
                 mouseIndicator.SetActive(true);
-                primaryText.text = hit.transform.GetComponent<Interactable>().name;
-                secondaryText.text = hit.transform.GetComponent<Interactable>().actionText;
+                primaryText.text = hit.transform.GetComponent<Interactable>().actionText;
+                secondaryText.text = hit.transform.GetComponent<Interactable>().name;
             }
 
             if (Input.GetMouseButtonDown(KeyBinds.rmb))
@@ -50,6 +50,10 @@ public class Interact : MonoBehaviour
         if (hit.transform.CompareTag("Door"))
         {
             hit.transform.GetComponent<Door>().OpenDoor();
+        }
+        if (hit.transform.CompareTag("VehicleDoor"))
+        {
+            hit.transform.GetComponent<VehicleDoor>().EnterVehicleDoor();
         }
     }
 

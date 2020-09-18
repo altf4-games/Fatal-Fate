@@ -15,6 +15,7 @@ public class VehicleHelper : MonoBehaviour
     [SerializeField] public bool canLeaveCar = false;
     [SerializeField] private WheelCollider rr;
     [SerializeField] private WheelCollider rl;
+    private bool walletCheck = false;
 
     private void Start()
     {
@@ -40,10 +41,12 @@ public class VehicleHelper : MonoBehaviour
             if(isEngineOn) {
                 engineIdle.Play();
                 rearWheelDrive.canAccelerate = true;
+                GetComponent<Rigidbody>().isKinematic = false;
 
             } else {
                 engineIdle.Stop();
                 rearWheelDrive.canAccelerate = false;
+                GetComponent<Rigidbody>().isKinematic = true;
             }
         }
 
@@ -52,6 +55,11 @@ public class VehicleHelper : MonoBehaviour
             if(isEngineOn == false && canLeaveCar == true)
             {
                 vehicleSwap.SwapPositions(false);
+                if(walletCheck == false)
+                {
+                    StoryHandlerA.instance.gameObject.GetComponent<CheckWallet>().enabled = true;
+                    walletCheck = true;
+                }
             }
         }
 

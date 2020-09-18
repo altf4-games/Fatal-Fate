@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class StoryHandlerA : MonoBehaviour
 {
+    public static StoryHandlerA instance;
     private string[] data;
     private int currentSubtitle;
 
     private void Awake()
     {
+        instance = this;
         LoadTextFromFile();
         currentSubtitle = 0;
     }
@@ -21,7 +23,7 @@ public class StoryHandlerA : MonoBehaviour
         data = rawData.Split('\n');
     }
 
-    public void PrintSubtitle(int index = default)
+    public float PrintSubtitle(int index = default)
     {
         int i = (index == 0) ? currentSubtitle : index;
         string[] subData = data[i].Split(';');
@@ -34,6 +36,7 @@ public class StoryHandlerA : MonoBehaviour
 
         SubtitleManager.instance.AddInQue(subtitle);
         currentSubtitle++;
+        return subtitle.time;
     }
 
     private void Start()

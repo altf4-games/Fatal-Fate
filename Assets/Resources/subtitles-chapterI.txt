@@ -1,2 +1,6 @@
 Gas is running out, I better refuel;4.5
 The next exit is about a km away;4
+Oh right. I don't have any money left after I escaped from prison;4.5
+My Alzheimer is going to get me killed;3
+I have no more options, gotta rob this store;4
+I better park my car and think of a plan;4

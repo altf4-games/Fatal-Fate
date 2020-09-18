@@ -494,6 +494,128 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &829045941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 829045942}
+  - component: {fileID: 829045946}
+  - component: {fileID: 829045945}
+  - component: {fileID: 829045944}
+  - component: {fileID: 130898035042013199}
+  - component: {fileID: 3171215957381592480}
+  m_Layer: 11
+  m_Name: Car Door
+  m_TagString: VehicleDoor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &829045942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829045941}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.004, y: -0.12, z: 0}
+  m_LocalScale: {x: 1.743406, y: 1.2389, z: 1.4394}
+  m_Children: []
+  m_Father: {fileID: 2707568103025500490}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &829045946
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829045941}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &829045945
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829045941}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &829045944
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829045941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &130898035042013199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829045941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965c69efd8fd9794d883b2fd9c091625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Enter
+  actionText: Interact
+--- !u!114 &3171215957381592480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829045941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420f2cadfdac66a47a1d24e8d369ec88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleSwap: {fileID: 927743367}
 --- !u!1 &1320937223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,11 +1252,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.33
   m_SuspensionSpring:
-    spring: 21770.746
-    damper: 3870.3547
+    spring: 21279.092
+    damper: 3782.9497
     targetPosition: 0.5
-  m_SuspensionDistance: 0.24222222
-  m_ForceAppPointDistance: 0.46409756
+  m_SuspensionDistance: 0.24222223
+  m_ForceAppPointDistance: 0.5143515
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -1164,6 +1286,7 @@ GameObject:
   - component: {fileID: 2707568103025500495}
   - component: {fileID: 927743367}
   - component: {fileID: 952961305}
+  - component: {fileID: 1190111896}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -1193,6 +1316,7 @@ Transform:
   - {fileID: 1705318531}
   - {fileID: 214057494}
   - {fileID: 216415283}
+  - {fileID: 829045942}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1301,9 +1425,22 @@ MonoBehaviour:
   vehicleSwap: {fileID: 927743367}
   isEngineOn: 1
   isInsideCar: 1
-  canLeaveCar: 1
+  canLeaveCar: 0
   rr: {fileID: 2707568102947830793}
   rl: {fileID: 2707568103558189997}
+--- !u!65 &1190111896
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2707568103025500494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.2440405, z: 1.9075012}
+  m_Center: {x: 0, y: -0.2435071, z: 0.05416107}
 --- !u!1 &2707568103083887018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,11 +1575,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.33
   m_SuspensionSpring:
-    spring: 20917.463
-    damper: 3718.6602
+    spring: 20376.652
+    damper: 3622.516
     targetPosition: 0.5
-  m_SuspensionDistance: 0.24222225
-  m_ForceAppPointDistance: 0.46409756
+  m_SuspensionDistance: 0.24222223
+  m_ForceAppPointDistance: 0.5143515
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -1499,11 +1636,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.33
   m_SuspensionSpring:
-    spring: 19582.53
-    damper: 3481.3386
+    spring: 20123.352
+    damper: 3577.4849
     targetPosition: 0.5
-  m_SuspensionDistance: 0.24222226
-  m_ForceAppPointDistance: 0.46409756
+  m_SuspensionDistance: 0.24222222
+  m_ForceAppPointDistance: 0.5143515
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -1560,11 +1697,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.33
   m_SuspensionSpring:
-    spring: 18729.252
-    damper: 3329.645
+    spring: 19220.914
+    damper: 3417.0513
     targetPosition: 0.5
-  m_SuspensionDistance: 0.24222222
-  m_ForceAppPointDistance: 0.46409756
+  m_SuspensionDistance: 0.2422222
+  m_ForceAppPointDistance: 0.5143515
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -5464,15 +5601,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ebe2b3f9e2b0a341a1f7e377d7ec0b1, type: 3}
---- !u!4 &7702737426131141512 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2334398309286308184, guid: 8ebe2b3f9e2b0a341a1f7e377d7ec0b1,
-    type: 3}
-  m_PrefabInstance: {fileID: 5368550258688076496}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7706060083476493978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2337791335819500618, guid: 8ebe2b3f9e2b0a341a1f7e377d7ec0b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5368550258688076496}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7702737426131141512 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2334398309286308184, guid: 8ebe2b3f9e2b0a341a1f7e377d7ec0b1,
     type: 3}
   m_PrefabInstance: {fileID: 5368550258688076496}
   m_PrefabAsset: {fileID: 0}
@@ -5560,9 +5697,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8959fe3a30c473847800b30e9a079eda, type: 3}
---- !u!1 &508195701 stripped
+--- !u!1 &508195703 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6174268402153302914, guid: 8959fe3a30c473847800b30e9a079eda,
+  m_CorrespondingSourceObject: {fileID: 6174268402153302912, guid: 8959fe3a30c473847800b30e9a079eda,
     type: 3}
   m_PrefabInstance: {fileID: 6174268402317547767}
   m_PrefabAsset: {fileID: 0}
@@ -5572,9 +5709,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6174268402317547767}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &508195703 stripped
+--- !u!1 &508195701 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6174268402153302912, guid: 8959fe3a30c473847800b30e9a079eda,
+  m_CorrespondingSourceObject: {fileID: 6174268402153302914, guid: 8959fe3a30c473847800b30e9a079eda,
     type: 3}
   m_PrefabInstance: {fileID: 6174268402317547767}
   m_PrefabAsset: {fileID: 0}
