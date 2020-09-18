@@ -5,6 +5,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class CheckWallet : MonoBehaviour
 {
     [SerializeField] private Tutorial tutorial;
+    [SerializeField] private VehicleHelper helper;
     [SerializeField] private GameObject walletImg;
     [SerializeField] private GameObject bgBlur;
     [SerializeField] private GameObject spotA;
@@ -47,6 +48,7 @@ public class CheckWallet : MonoBehaviour
         GetComponent<StoryHandlerA>().PrintSubtitle();
         GetComponent<StoryHandlerA>().PrintSubtitle();
         door.SetActive(true);
+        helper.canLeaveCar = false;
         door.transform.parent = null;
         return null;
     }

@@ -15,7 +15,7 @@ public class VehicleHelper : MonoBehaviour
     [SerializeField] public bool canLeaveCar = false;
     [SerializeField] private WheelCollider rr;
     [SerializeField] private WheelCollider rl;
-    private bool walletCheck = false;
+    private int leaveCheck;
 
     private void Start()
     {
@@ -52,13 +52,19 @@ public class VehicleHelper : MonoBehaviour
 
         if (Input.GetKeyDown(KeyBinds.exit))
         {
-            if(isEngineOn == false && canLeaveCar == true)
+            if (isEngineOn == false && canLeaveCar == true)
             {
                 vehicleSwap.SwapPositions(false);
-                if(walletCheck == false)
+                if (leaveCheck == 0)
                 {
                     StoryHandlerA.instance.gameObject.GetComponent<CheckWallet>().enabled = true;
-                    walletCheck = true;
+                    leaveCheck++;
+                    return;
+                }
+                if (leaveCheck == 1)
+                {
+                    StoryHandlerA.instance.gameObject.GetComponent<BoardPlan>().PlanningPhase();
+                    leaveCheck++;
                 }
             }
         }
