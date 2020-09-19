@@ -10,18 +10,21 @@ public class BoardPlan : MonoBehaviour
     [SerializeField] private GameObject boardObj;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject blackBg;
+    [SerializeField] public Door marketDoor;
+    [SerializeField] public Door[] bathroomDoors;
     private bool acceptInput;
+    private bool doOnce = true;
 
     private void Update()
     {
-        if(Input.anyKeyDown && acceptInput)
+        if(Input.anyKeyDown && acceptInput && doOnce)
         {
             FirstPersonController.pausePlayer = false;
             boardCamera.gameObject.SetActive(false);
             player.transform.position = boardCamera.transform.position;
             player.SetActive(true);
             StoryHandlerA.instance.PrintSubtitle();
-            Destroy(this);
+            doOnce = false;
         }
     }
 
@@ -45,5 +48,9 @@ public class BoardPlan : MonoBehaviour
         blackBg.SetActive(false);
         boardObj.SetActive(true);
         acceptInput = true;
+        foreach (Door door in bathroomDoors)
+        {
+            door.gameObject.layer = LayerMask.NameToLayer("Interact");
+        }
     }
 }
