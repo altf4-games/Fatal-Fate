@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
     [SerializeField] private AudioClip doorHandle;
     [SerializeField] private AudioClip doorLocked;
     [SerializeField] private float openSpeed = 1f;
-    [SerializeField] private bool isLocked = false;
+    [SerializeField] public bool isLocked = false;
     private bool isOpen = false;
 
     public void OpenDoor()

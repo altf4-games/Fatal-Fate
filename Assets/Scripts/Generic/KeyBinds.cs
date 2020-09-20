@@ -10,7 +10,7 @@ public class KeyBinds : MonoBehaviour
     [SerializeField] private KeyCode exitKey = KeyCode.Escape;
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
     [SerializeField] private KeyCode optAKey = KeyCode.A;
-    [SerializeField] private KeyCode optBKey = KeyCode.B;
+    [SerializeField] private KeyCode optBKey = KeyCode.D;
 
     public static KeyCode engine;
     public static KeyCode horn;

@@ -11,6 +11,7 @@ public class OptionPopup : MonoBehaviour
     [SerializeField] private GameObject optionA;
     [SerializeField] private GameObject optionB;
     [SerializeField] private GameObject bgBlur;
+    [SerializeField] private TextMeshProUGUI convoText;
     private Option cachedA;
     private Option cachedB;
     private bool acceptInput;
@@ -31,11 +32,11 @@ public class OptionPopup : MonoBehaviour
 
         if (Input.GetKeyDown(KeyBinds.optB) && cachedB != null)
         {
-            ButtonPress(cachedA.optionType);
+            ButtonPress(cachedB.optionType);
         }
     }
 
-    public void SetupDecision(Option A,Option B = default)
+    public void SetupDecision(Option A,Option B = default,string convo = default)
     {
         cachedA = A;
         if (B != null) cachedB = B;
@@ -46,19 +47,26 @@ public class OptionPopup : MonoBehaviour
         optionA.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = A.str;
         if (B != null) optionB.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = B.str;
 
+        convoText.text = convo;
+
         FirstPersonController.pausePlayer = true;
         acceptInput = true;
     }
 
     private void ButtonPress(char type)
     {
-        if(type == 'A') {
+        if (type == 'A')
+        {
             cachedA.method();
             cachedA = null;
-        } else {
+        }
+        else
+        {
             cachedB.method();
             cachedB = null;
         }
+        cachedA = null;
+        cachedB = null;
         ResetOpt();
     }
 
@@ -67,6 +75,7 @@ public class OptionPopup : MonoBehaviour
         bgBlur.SetActive(false);
         optionA.SetActive(false);
         optionB.SetActive(false);
+        convoText.text = "";
         FirstPersonController.pausePlayer = false;
         acceptInput = false;
     }
