@@ -4,7 +4,6 @@ Oh right. I don't have any money left after I escaped from prison;4.5
 My Alzheimer is going to get me killed;3
 I have no more options, gotta rob this store;4
 I better park my car and think of a plan;4
-Flooding the toilets should be a good enough distraction;4
-Damn. It's locked, the clerk should have the keys;4
-Sure;1.25
+Let's a go;2
+Yeah. But why'd you ask that?;1.25
 ....;1.25

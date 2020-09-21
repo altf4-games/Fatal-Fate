@@ -10,8 +10,7 @@ public class BoardPlan : MonoBehaviour
     [SerializeField] private GameObject boardObj;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject blackBg;
-    [SerializeField] public Door marketDoor;
-    [SerializeField] public Door[] bathroomDoors;
+    [SerializeField] private GameObject storeDoor;
     private bool acceptInput;
     private bool doOnce = true;
 
@@ -48,9 +47,6 @@ public class BoardPlan : MonoBehaviour
         blackBg.SetActive(false);
         boardObj.SetActive(true);
         acceptInput = true;
-        foreach (Door door in bathroomDoors)
-        {
-            door.gameObject.layer = LayerMask.NameToLayer("Interact");
-        }
+        storeDoor.layer = LayerMask.NameToLayer("Interact");
     }
 }

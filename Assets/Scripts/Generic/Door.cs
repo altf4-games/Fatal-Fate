@@ -32,12 +32,5 @@ public class Door : MonoBehaviour
                 LeanTween.rotate(doorRoot, closeRot, openSpeed);
             }
         }
-        else
-        {
-            if (doorLocked != null)
-            AudioManager.instance.PlayAudio(doorLocked, 1.0f);
-            StoryHandlerA.instance.PrintSubtitle(7);
-            StoryHandlerA.instance.GetComponent<BoardPlan>().marketDoor.gameObject.layer = LayerMask.NameToLayer("Interact");
-        }
     }
 }

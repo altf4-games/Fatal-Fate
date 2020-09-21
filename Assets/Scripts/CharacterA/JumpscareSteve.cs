@@ -11,8 +11,6 @@ public class JumpscareSteve : MonoBehaviour
     [SerializeField] private GameObject fpCamera;
     [SerializeField] private AudioClip scareClip;
     [SerializeField] private AudioClip keyClip;
-    [SerializeField] private Door[] doors;
-    public bool hasKey = false;
     private bool doOnce = true;
 
     private void OnTriggerEnter(Collider other)
@@ -35,30 +33,24 @@ public class JumpscareSteve : MonoBehaviour
         AudioManager.instance.PlayAudio(scareClip, 1.0f);
         yield return new WaitForSeconds(.75f);
 
-        Option A = new Option("Can I get the keys for the toilets?", 'A', ObtainKeys);
+        Option A = new Option("Are you working alone today?", 'A', YeaRespone);
         Option B = new Option("umm Nothing", 'B', NoResponse);
         OptionPopup.instance.SetupDecision(A, B, "CAN I HELP YOU WITH ANYTHING, SIR?");
     }
 
-    private string ObtainKeys()
+    private string YeaRespone()
     {
         steve.SetActive(true);
         jumpscareSteve.SetActive(false);
-        StoryHandlerA.instance.PrintSubtitle(8);
+        StoryHandlerA.instance.PrintSubtitle(7);
         fpController.enabled = true;
-        hasKey = true;
-        foreach (Door item in doors)
-        {
-            item.isLocked = false;
-        }
-
         AudioManager.instance.PlayAudio(keyClip, 1.0f);
         return null;
     }
 
     private string NoResponse()
     {
-        StoryHandlerA.instance.PrintSubtitle(9);
+        StoryHandlerA.instance.PrintSubtitle(8);
         StartCoroutine(waitForOptions());
         return null;
     }
@@ -66,7 +58,7 @@ public class JumpscareSteve : MonoBehaviour
     private IEnumerator waitForOptions()
     {
         yield return new WaitForSeconds(2f);
-        Option A = new Option("Can I get the keys for the toilets?", 'A', ObtainKeys);
+        Option A = new Option("Are you working alone today?", 'A', YeaRespone);
         OptionPopup.instance.SetupDecision(A, default, "CAN I HELP YOU WITH ANYTHING, SIR?");
     }
 }
