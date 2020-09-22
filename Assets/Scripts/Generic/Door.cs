@@ -12,6 +12,7 @@ public class Door : MonoBehaviour
     [SerializeField] private AudioClip doorLocked;
     [SerializeField] private float openSpeed = 1f;
     [SerializeField] public bool isLocked = false;
+    [SerializeField] public bool canBeLockpicked = false;
     private bool isOpen = false;
 
     public void OpenDoor()
@@ -30,6 +31,18 @@ public class Door : MonoBehaviour
                 if (doorHandle != null)
                 AudioManager.instance.PlayAudio(doorHandle, 1.0f);
                 LeanTween.rotate(doorRoot, closeRot, openSpeed);
+            }
+        }
+        else
+        {
+            if(canBeLockpicked)
+            {
+                GetComponent<Lockpick>().SetupLockpick();
+            }
+
+            if(doorLocked != null)
+            {
+                AudioManager.instance.PlayAudio(doorLocked, 1.0f);
             }
         }
     }

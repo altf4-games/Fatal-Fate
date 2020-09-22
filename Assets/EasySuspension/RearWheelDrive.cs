@@ -45,13 +45,13 @@ public class RearWheelDrive : MonoBehaviour {
 		float torque = (canAccelerate == true) ? maxTorque * Input.GetAxis("Vertical") : 0;
 		float bTorque = (Input.GetKey(KeyBinds.brake) && canAccelerate) ? brakeTorque : 0;
 
-
-		if (torque >= 25f)
-        {
-			carAccelerate.volume = Mathf.Clamp(carAccelerate.volume + .1f * Time.deltaTime, 0, 1f);
+		if(bTorque != 0) {
+			carAccelerate.volume = Mathf.Clamp(carAccelerate.volume - .1f * Time.deltaTime, 0, 1f);
 		}
-		else
-        {
+
+		if (torque >= 25f) {
+			carAccelerate.volume = Mathf.Clamp(carAccelerate.volume + .1f * Time.deltaTime, 0, 1f);
+		} else {
 			carAccelerate.volume = Mathf.Clamp(carAccelerate.volume - .1f * Time.deltaTime, 0, 1f);
         }
 
