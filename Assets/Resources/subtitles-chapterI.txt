@@ -3,7 +3,8 @@ The next exit is about a km away;4
 Oh right. I don't have any money left after I escaped from prison;4.5
 My Alzheimer is going to get me killed;3
 I have no more options, gotta rob this store;4
-I should park this car and think of a plan;4
+I should park this car and brainstorm a plan;4
 Let's a go;2
 Yeah. But why'd you ask that?;1.25
 ....;1.25
+The system is off now.;2.5

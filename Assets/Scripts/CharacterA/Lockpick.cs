@@ -8,6 +8,8 @@ public class Lockpick : MonoBehaviour
     [SerializeField] private GameObject lockPickCam;
     [SerializeField] private GameObject paperClip;
     [SerializeField] private GameObject fpsCam;
+    [SerializeField] private GameObject survObj;
+    [SerializeField] private GameObject UI;
     [SerializeField] private AudioSource audioS;
     public bool unlocked = false;
     private bool acceptInput = false;
@@ -26,6 +28,7 @@ public class Lockpick : MonoBehaviour
                 {
                     unlocked = true;
                     GetComponent<Door>().isLocked = false;
+                    survObj.layer = LayerMask.NameToLayer("Interact");
                     ResetView();
                 }
             }
@@ -48,6 +51,7 @@ public class Lockpick : MonoBehaviour
         lockPickCam.SetActive(true);
         paperClip.SetActive(true);
         acceptInput = true;
+        UI.SetActive(false);
     }
 
     private void ResetView()

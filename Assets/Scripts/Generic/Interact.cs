@@ -55,6 +55,10 @@ public class Interact : MonoBehaviour
         {
             hit.transform.GetComponent<VehicleDoor>().EnterVehicleDoor();
         }
+        if (hit.transform.CompareTag("Surveillance"))
+        {
+            hit.transform.GetComponent<Surveillance>().SetupSurveillance();
+        }
     }
 
     private void CharacterBInts(RaycastHit hit)
