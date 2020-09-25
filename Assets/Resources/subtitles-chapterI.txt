@@ -1,10 +1,13 @@
-Gas is running out, I better refuel;4.5
-The next exit is about a km away;4
-Oh right. I don't have any money left after I escaped from prison;4.5
+Gas is running out, I better refuel;4
+The next exit is about half a mile away;4
+Oh right. I don't have any money left after I escaped from prison;3
 My Alzheimer is going to get me killed;3
-I have no more options, gotta rob this store;4
-I should park this car and brainstorm a plan;4
-Let's a go;2
-Yeah. But why'd you ask that?;1.25
-....;1.25
+I have no more options, gotta rob this store;3
+I should park this car and brainstorm a plan;3
+Let's go;1
+???: Yeah. But why'd you ask that?;1.25
+???: ....;1.25
 The system is off now.;2.5
+Time to lure him out.;2
+???: No. The bathroom is only open for customers, You gotta buy something.;3
+???: hm. Fine. Follow me.;3

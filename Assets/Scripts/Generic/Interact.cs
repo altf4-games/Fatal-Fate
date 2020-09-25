@@ -59,6 +59,14 @@ public class Interact : MonoBehaviour
         {
             hit.transform.GetComponent<Surveillance>().SetupSurveillance();
         }
+        if (hit.transform.CompareTag("NPC_S"))
+        {
+            hit.transform.GetComponent<NPCSteve>().TalkToNPC();
+        }
+        if (hit.transform.CompareTag("Milk"))
+        {
+            hit.transform.GetComponent<Milk>().PickUpMilk();
+        }
     }
 
     private void CharacterBInts(RaycastHit hit)

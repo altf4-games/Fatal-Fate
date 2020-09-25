@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
     [SerializeField] private float openSpeed = 1f;
     [SerializeField] public bool isLocked = false;
     [SerializeField] public bool canBeLockpicked = false;
-    private bool isOpen = false;
+    [HideInInspector] public bool isOpen = false;
 
     public void OpenDoor()
     {

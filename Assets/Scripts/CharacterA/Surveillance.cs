@@ -7,9 +7,11 @@ using UnityStandardAssets.Characters.FirstPerson;
 [RequireComponent(typeof(Interactable))]
 public class Surveillance : MonoBehaviour
 {
+    [SerializeField] private GameObject npcSteve;
     [SerializeField] private GameObject survCamera;
     [SerializeField] private GameObject playerCamera;
     [SerializeField] private GameObject UI;
+    [SerializeField] private GameObject bgBlur;
     [SerializeField] private GameObject survPanel;
     [SerializeField] private GameObject deleteButton;
     [SerializeField] private TextMeshProUGUI display;
@@ -25,6 +27,7 @@ public class Surveillance : MonoBehaviour
     {
         if (!canBeUnlocked) return;
         survCamera.SetActive(true);
+        bgBlur.SetActive(true);
         playerCamera.SetActive(false);
         UI.SetActive(false);
         FirstPersonController.pausePlayer = true;
@@ -56,6 +59,7 @@ public class Surveillance : MonoBehaviour
         AudioManager.instance.PlayAudio(feedBack, 1.0f);
         survCamera.SetActive(false);
         playerCamera.SetActive(true);
+        bgBlur.SetActive(false);
         FirstPersonController.pausePlayer = false;
         GameController.SetCursor(false, true);
         survPanel.SetActive(false);
@@ -66,6 +70,8 @@ public class Surveillance : MonoBehaviour
         AudioManager.instance.PlayAudio(feedBack, 1.0f);
         canBeUnlocked = false;
         StoryHandlerA.instance.PrintSubtitle(9);
+        StoryHandlerA.instance.PrintSubtitle(10);
+        npcSteve.layer = LayerMask.NameToLayer("Interact");
         foreach (GameObject screen in screenOffs) {
             screen.SetActive(true);
         }
@@ -85,6 +91,7 @@ public class Surveillance : MonoBehaviour
             deleteButton.SetActive(true);
             input = "***";
             display.text = input;
+            bgBlur.SetActive(false);
             foreach (GameObject screen in screenOffs) {
                 screen.SetActive(false);
             }

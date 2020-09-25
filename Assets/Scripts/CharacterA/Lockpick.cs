@@ -10,6 +10,7 @@ public class Lockpick : MonoBehaviour
     [SerializeField] private GameObject fpsCam;
     [SerializeField] private GameObject survObj;
     [SerializeField] private GameObject UI;
+    [SerializeField] private GameObject mouseX;
     [SerializeField] private AudioSource audioS;
     public bool unlocked = false;
     private bool acceptInput = false;
@@ -52,6 +53,7 @@ public class Lockpick : MonoBehaviour
         paperClip.SetActive(true);
         acceptInput = true;
         UI.SetActive(false);
+        mouseX.SetActive(true);
     }
 
     private void ResetView()
@@ -62,5 +64,6 @@ public class Lockpick : MonoBehaviour
         lockPickCam.SetActive(false);
         paperClip.SetActive(false);
         acceptInput = false;
+        mouseX.SetActive(false);
     }
 }
