@@ -55,8 +55,10 @@ public class NPCSteve : MonoBehaviour
             agent.SetDestination(nodes[nodeIndex].position);
             if (agent.remainingDistance <= 1.25f)
             {
-                if(nodeIndex != nodes.Length -1)
-                nodeIndex++;
+                if (nodeIndex < nodes.Length - 1)
+                {
+                    nodeIndex++;
+                }
             }
         }
     }

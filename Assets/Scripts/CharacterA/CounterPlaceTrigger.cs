@@ -7,6 +7,7 @@ public class CounterPlaceTrigger : MonoBehaviour
     [SerializeField] private GameObject fpsMilk;
     [SerializeField] private GameObject counterMilk;
     [SerializeField] private GameObject backDoor;
+    [SerializeField] private Door bathroomDoor;
     [SerializeField] private NPCSteve npcSteve;
     private bool doOnce = false;
 
@@ -26,6 +27,7 @@ public class CounterPlaceTrigger : MonoBehaviour
     {
         StoryHandlerA.instance.PrintSubtitle(12);
         npcSteve.moveToDest = true;
+        bathroomDoor.isLocked = false;
         npcSteve.GetComponent<NPCHead>().enabled = false;
         LeanTween.rotate(backDoor, new Vector3(-90f, 0, 90f), 1f);
         return null;

@@ -37,7 +37,7 @@ public class Surveillance : MonoBehaviour
 
     public void EnterChar(int chr)
     {
-        if (chr == 10)
+        if (chr == 10 && input != "***")
         {
             input = "";
             display.text = null;

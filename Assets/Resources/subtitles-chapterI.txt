@@ -11,3 +11,4 @@ The system is off now.;2.5
 Time to lure him out.;2
 ???: No. The bathroom is only open for customers, You gotta buy something.;3
 ???: hm. Fine. Follow me.;3
+Now I can loot in peace.;3
