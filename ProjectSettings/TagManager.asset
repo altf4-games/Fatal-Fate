@@ -9,6 +9,7 @@ TagManager:
   - Surveillance
   - NPC_S
   - Milk
+  - Cash
   layers:
   - Default
   - TransparentFX

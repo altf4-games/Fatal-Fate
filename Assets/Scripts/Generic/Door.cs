@@ -65,6 +65,7 @@ public class Door : MonoBehaviour
         DoorBang();
         doorBang.Play();
         StoryHandlerA.instance.PrintSubtitle(13);
+        TriggerGun.isActive = true;
     }
 
     private void DoorBang()
