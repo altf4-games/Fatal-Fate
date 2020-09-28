@@ -32,7 +32,6 @@ public class JumpscareSteve : MonoBehaviour
         LeanTween.rotateLocal(fpCamera, new Vector3(0, fpCamera.transform.localRotation.y+ 180f, 0), .25f);
         AudioManager.instance.PlayAudio(scareClip, 1.0f);
         yield return new WaitForSeconds(.75f);
-
         Option A = new Option("Are you working alone today?", 'A', YeaRespone);
         Option B = new Option("umm Nothing", 'B', NoResponse);
         OptionPopup.instance.SetupDecision(A, B, "CAN I HELP YOU WITH ANYTHING, SIR?");

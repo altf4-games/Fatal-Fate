@@ -58,6 +58,7 @@ public class Door : MonoBehaviour
         TimeLimiter.instance.StopTimer();
         Time.timeScale = 1f;
         Invoke("WaitForDoorClose", 1.25f);
+        canStopSlowDown = false;
     }
 
     private void WaitForDoorClose()

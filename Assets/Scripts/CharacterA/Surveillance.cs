@@ -37,13 +37,13 @@ public class Surveillance : MonoBehaviour
 
     public void EnterChar(int chr)
     {
-        if (chr == 10 && input != "***")
+        if (chr == 10)
         {
             input = "";
             display.text = null;
             return;
         }
-        else if (chr == 11)
+        else if (chr == 11 && input != "***")
         {
             CheckAnswer();
             return;
