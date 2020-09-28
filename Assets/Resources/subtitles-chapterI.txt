@@ -13,3 +13,5 @@ Time to lure him out.;2
 ???: hm. Fine. Follow me.;3
 Now I can loot in peace.;3
 Alright! Time to bust out;3
+???: You picked the wrong house fool. Drop the money and I'll let you go;4
+HAHAHAHA. You're gonna risk your life for a shitty job;3
