@@ -71,9 +71,21 @@ public class Interact : MonoBehaviour
 
     private void CharacterBInts(RaycastHit hit)
     {
-        /*if (hit.transform.CompareTag("Door"))
+        if (hit.transform.CompareTag("Door"))
         {
             hit.transform.GetComponent<Door>().OpenDoor();
-        }*/
+        }
+        if (hit.transform.CompareTag("Drawer"))
+        {
+            hit.transform.GetComponent<Drawer>().OpenDrawer();
+        }
+        if (hit.transform.CompareTag("Note"))
+        {
+            hit.transform.GetComponent<NoteSystem>().ToggleNote();
+        }
+        if (hit.transform.CompareTag("Pizza"))
+        {
+            hit.transform.GetComponent<PizzaBox>().Interactions();
+        }
     }
 }

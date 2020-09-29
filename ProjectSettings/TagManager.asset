@@ -10,6 +10,9 @@ TagManager:
   - NPC_S
   - Milk
   - Cash
+  - Drawer
+  - Note
+  - Pizza
   layers:
   - Default
   - TransparentFX

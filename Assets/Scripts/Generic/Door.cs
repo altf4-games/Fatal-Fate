@@ -14,6 +14,8 @@ public class Door : MonoBehaviour
     [SerializeField] private float openSpeed = 1f;
     [SerializeField] public bool isLocked = false;
     [SerializeField] public bool canBeLockpicked = false;
+    [SerializeField] public bool sPlayerLock = false;
+    [SerializeField] public string excuse = "";
     [HideInInspector] public bool isOpen = false;
     [HideInInspector] public bool canStopSlowDown = false;
 
@@ -21,6 +23,11 @@ public class Door : MonoBehaviour
     {
         if (canStopSlowDown) {
             StopSlowDown();
+        }
+        if (sPlayerLock) {
+            Subtitle subtitle = new Subtitle { msg = excuse, time = 1.75f };
+            SubtitleManager.instance.AddInQue(subtitle);
+            return;
         }
         if (isLocked == false)
         {
