@@ -13,6 +13,8 @@ TagManager:
   - Drawer
   - Note
   - Pizza
+  - Trash
+  - Dumpster
   layers:
   - Default
   - TransparentFX

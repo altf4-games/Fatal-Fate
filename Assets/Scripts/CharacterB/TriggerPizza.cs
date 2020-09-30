@@ -6,7 +6,9 @@ public class TriggerPizza : MonoBehaviour
 {
     public static TriggerPizza instance;
     [SerializeField] private GameObject pizzaPrefab;
+    [SerializeField] private GameObject fpsPizza;
     [SerializeField] private Door marketDoor;
+    [SerializeField] private Trash trashBag;
     [SerializeField] private List<GameObject> placeSpots = new List<GameObject>();
     public static bool isDone = false;
     private int currentPizza;
@@ -18,15 +20,19 @@ public class TriggerPizza : MonoBehaviour
 
     public void PlacePizza()
     {
-        Instantiate(pizzaPrefab, placeSpots[currentPizza].transform.position, 
-        placeSpots[currentPizza].transform.rotation);
-        placeSpots[currentPizza].GetComponent<MeshRenderer>().enabled = false;
-        currentPizza++;
-        if(currentPizza == placeSpots.Count)
+        if (fpsPizza.activeInHierarchy)
         {
-            isDone = true;
-            marketDoor.sPlayerLock = false;
-            StoryHandlerB.instance.PrintSubtitle();
+            Instantiate(pizzaPrefab, placeSpots[currentPizza].transform.position,
+            placeSpots[currentPizza].transform.rotation);
+            placeSpots[currentPizza].GetComponent<MeshRenderer>().enabled = false;
+            currentPizza++;
+            if (currentPizza == placeSpots.Count)
+            {
+                isDone = true;
+                marketDoor.sPlayerLock = false;
+                StoryHandlerB.instance.PrintSubtitle();
+                trashBag.gameObject.layer = LayerMask.NameToLayer("Interact");
+            }
         }
     }
 }

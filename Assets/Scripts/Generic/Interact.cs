@@ -87,5 +87,13 @@ public class Interact : MonoBehaviour
         {
             hit.transform.GetComponent<PizzaBox>().Interactions();
         }
+        if (hit.transform.CompareTag("Trash"))
+        {
+            hit.transform.GetComponent<Trash>().PickUpTrash();
+        }
+        if (hit.transform.CompareTag("Dumpster"))
+        {
+            hit.transform.GetComponent<Dumpster>().DisposeTrash();
+        }
     }
 }
