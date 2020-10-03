@@ -95,5 +95,9 @@ public class Interact : MonoBehaviour
         {
             hit.transform.GetComponent<Dumpster>().DisposeTrash();
         }
+        if (hit.transform.CompareTag("Bat"))
+        {
+            hit.transform.GetComponent<Bat>().PickUpBat();
+        }
     }
 }

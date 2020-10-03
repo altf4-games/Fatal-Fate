@@ -15,6 +15,7 @@ TagManager:
   - Pizza
   - Trash
   - Dumpster
+  - Bat
   layers:
   - Default
   - TransparentFX

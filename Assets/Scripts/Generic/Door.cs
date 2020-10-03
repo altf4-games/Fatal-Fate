@@ -15,6 +15,7 @@ public class Door : MonoBehaviour
     [SerializeField] public bool isLocked = false;
     [SerializeField] public bool canBeLockpicked = false;
     [SerializeField] public bool sPlayerLock = false;
+    [SerializeField] public bool sPlayBreakThrough = false;
     [SerializeField] public string excuse = "";
     [HideInInspector] public bool isOpen = false;
     [HideInInspector] public bool canStopSlowDown = false;
@@ -27,6 +28,10 @@ public class Door : MonoBehaviour
         if (sPlayerLock) {
             Subtitle subtitle = new Subtitle { msg = excuse, time = 1.75f };
             SubtitleManager.instance.AddInQue(subtitle);
+            return;
+        }
+        if (sPlayBreakThrough) {
+            QTE.instance.ToggleQTE(true);
             return;
         }
         if (isLocked == false)

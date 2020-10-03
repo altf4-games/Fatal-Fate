@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerBathroom : MonoBehaviour
 {
     [SerializeField] private Door bathroomDoor;
+    [SerializeField] private GameObject criminal;
     private bool doOnce = true;
 
     private void OnTriggerEnter(Collider other)
@@ -14,6 +15,8 @@ public class TriggerBathroom : MonoBehaviour
             bathroomDoor.isOpen = true;
             bathroomDoor.OpenDoor();
             bathroomDoor.isLocked = true;
+            bathroomDoor.sPlayBreakThrough = true;
+            criminal.SetActive(false);
             doOnce = false;
         }
     }

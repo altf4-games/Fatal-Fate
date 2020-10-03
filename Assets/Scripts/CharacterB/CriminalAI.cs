@@ -99,6 +99,7 @@ public class CriminalAI : MonoBehaviour
                     StoryHandlerB.instance.PrintSubtitle();
                     StoryHandlerB.instance.PrintSubtitle();
                     bathroomDoor.isLocked = false;
+                    agent.speed = 4.5f;
                     agent.stoppingDistance = 4;
                     followMode = true;
                     StopCoroutine("FSM");

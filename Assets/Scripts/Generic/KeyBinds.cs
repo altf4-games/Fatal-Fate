@@ -11,6 +11,7 @@ public class KeyBinds : MonoBehaviour
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
     [SerializeField] private KeyCode optAKey = KeyCode.A;
     [SerializeField] private KeyCode optBKey = KeyCode.D;
+    [SerializeField] private KeyCode actionKey = KeyCode.Space;
 
     public static KeyCode engine;
     public static KeyCode horn;
@@ -19,6 +20,7 @@ public class KeyBinds : MonoBehaviour
     public static KeyCode sprint;
     public static KeyCode optA;
     public static KeyCode optB;
+    public static KeyCode action;
     public static int lmb = 0;
     public static int rmb = 1;
 
@@ -31,5 +33,6 @@ public class KeyBinds : MonoBehaviour
         sprint = sprintKey;
         optA = optAKey;
         optB = optBKey;
+        action = actionKey;
     }
 }
