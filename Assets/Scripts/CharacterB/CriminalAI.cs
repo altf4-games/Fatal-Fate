@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,11 +10,19 @@ public class CriminalAI : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Transform eyePos;
     [SerializeField] private Transform nodeParent;
+    [SerializeField] private Transform player;
+    [SerializeField] private GameObject handMilk;
+    [SerializeField] private GameObject counterMilk;
+    [SerializeField] private GameObject counterBlocker;
+    [SerializeField] private Door backDoor;
+    [SerializeField] private Door bathroomDoor;
+    [SerializeField] private AudioClip powerDown;
     [SerializeField] private AudioClip[] footsteps;
     private Transform[] nodes;
     private int nodeIndex;
     private float velocity;
     private Vector3 previousPos;
+    private bool followMode;
 
     private void Start()
     {
@@ -27,18 +36,25 @@ public class CriminalAI : MonoBehaviour
 
     private void Update()
     {
-        RaycastHit doorHit;
-        Debug.DrawRay(eyePos.transform.position, eyePos.transform.forward * 24, Color.red);
-        if (Physics.Raycast(eyePos.transform.position, eyePos.transform.forward, out doorHit, 4f))
+        if(!followMode)
         {
-            if (doorHit.transform.CompareTag("Door"))
+            RaycastHit doorHit;
+            Debug.DrawRay(eyePos.transform.position, eyePos.transform.forward * 24, Color.red);
+            if (Physics.Raycast(eyePos.transform.position, eyePos.transform.forward, out doorHit, 4f))
             {
-                if (doorHit.transform.GetComponent<Door>().isLocked == false && doorHit.transform.GetComponent<Door>().isOpen == false)
+                if (doorHit.transform.CompareTag("Door"))
                 {
-                    doorHit.transform.GetComponent<Door>().sPlayerLock = false;
-                    doorHit.transform.GetComponent<Door>().OpenDoor();
+                    if (doorHit.transform.GetComponent<Door>().isLocked == false && doorHit.transform.GetComponent<Door>().isOpen == false)
+                    {
+                        doorHit.transform.GetComponent<Door>().sPlayerLock = false;
+                        doorHit.transform.GetComponent<Door>().OpenDoor();
+                    }
                 }
             }
+        }
+        if(followMode == true)
+        {
+            agent.SetDestination(player.position);
         }
 
         velocity = ((transform.position - previousPos).magnitude) / Time.deltaTime;
@@ -55,10 +71,38 @@ public class CriminalAI : MonoBehaviour
             {
                 nodeIndex++;
                 yield return new WaitForSeconds(2);
-                if(nodeIndex == 12)
+                if (nodeIndex == 12)
                 {
                     NPC_Init01();
                     agent.speed = 0;
+                    backDoor.isLocked = false;
+                }
+                if (nodeIndex == 18)
+                {
+                    AudioManager.instance.PlayAudio(powerDown, 1.0f);
+                }
+                if (nodeIndex == 25)
+                {
+                    NPC_Init02();
+                    agent.speed = 0;
+                }
+                if (nodeIndex == 27)
+                {
+                    handMilk.SetActive(true);
+                }
+                if (nodeIndex == 30)
+                {
+                    yield return new WaitForSeconds(2);
+                    handMilk.SetActive(false);
+                    counterMilk.SetActive(true);
+                    counterBlocker.SetActive(false);
+                    StoryHandlerB.instance.PrintSubtitle();
+                    StoryHandlerB.instance.PrintSubtitle();
+                    bathroomDoor.isLocked = false;
+                    agent.stoppingDistance = 4;
+                    followMode = true;
+                    StopCoroutine("FSM");
+                    yield break;
                 }
             }
         }
@@ -75,7 +119,20 @@ public class CriminalAI : MonoBehaviour
 
     private string NPC_RespoA1()
     {
-        print("done");
+        agent.speed = 2.5f;
+        return null;
+    }
+
+    private void NPC_Init02()
+    {
+        Option A = new Option("No. The bathroom is only open for customers, You gotta buy something.", 'A', NPC_RespoA2);
+        Option B = new Option("No. Go away!!", 'B', null, true);
+        OptionPopup.instance.SetupDecision(A, B, "Can you open the bathroom doors for me, they're jammed.");
+    }
+
+    private string NPC_RespoA2()
+    {
+        agent.speed = 2.5f;
         return null;
     }
 

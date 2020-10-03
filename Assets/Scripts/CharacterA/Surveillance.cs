@@ -16,6 +16,7 @@ public class Surveillance : MonoBehaviour
     [SerializeField] private GameObject deleteButton;
     [SerializeField] private TextMeshProUGUI display;
     [SerializeField] private AudioClip feedBack;
+    [SerializeField] private AudioClip powerDown;
     [SerializeField] private GameObject[] screenOffs = new GameObject[2];
     [SerializeField] private GameObject[] screenOns = new GameObject[2];
     [SerializeField] private GameObject[] cameras = new GameObject[2];
@@ -57,6 +58,7 @@ public class Surveillance : MonoBehaviour
     public void PowerOff()
     {
         AudioManager.instance.PlayAudio(feedBack, 1.0f);
+        AudioManager.instance.PlayAudio(powerDown, 1.0f);
         survCamera.SetActive(false);
         playerCamera.SetActive(true);
         bgBlur.SetActive(false);
