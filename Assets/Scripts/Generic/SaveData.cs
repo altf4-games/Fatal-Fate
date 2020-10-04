@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.IO;
+using System;
 
 public class SaveData : MonoBehaviour
 {
@@ -20,10 +21,10 @@ public class SaveData : MonoBehaviour
         File.WriteAllText(savePath, xml);
     }
 
-    public string ReadData()
+    public Tuple <string,string> ReadData()
     {
         string xml = File.ReadAllText(savePath);
         string[] parsedData = xml.Split('\n');
-        return parsedData[0].Split('=')[1];
+        return Tuple.Create(parsedData[0].Split('=')[1], parsedData[1].Split('=')[1]);
     }
 }

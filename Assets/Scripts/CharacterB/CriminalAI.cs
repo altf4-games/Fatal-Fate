@@ -114,7 +114,7 @@ public class CriminalAI : MonoBehaviour
     private void NPC_Init01()
     {
         Option A = new Option("Yeah. But why'd you ask that?", 'A', NPC_RespoA1);
-        Option B = new Option("No. Also why should I answer you?", 'B', null, true);
+        Option B = new Option("No. Also, why should I answer you?", 'B', null, true);
         OptionPopup.instance.SetupDecision(A, B, "Are you working alone today?");
     }
 
@@ -126,7 +126,7 @@ public class CriminalAI : MonoBehaviour
 
     private void NPC_Init02()
     {
-        Option A = new Option("No. The bathroom is only open for customers, You gotta buy something.", 'A', NPC_RespoA2);
+        Option A = new Option("No. The bathroom is only accessible for customers, You gotta buy something.", 'A', NPC_RespoA2);
         Option B = new Option("No. Go away!!", 'B', null, true);
         OptionPopup.instance.SetupDecision(A, B, "Can you open the bathroom doors for me, they're jammed.");
     }

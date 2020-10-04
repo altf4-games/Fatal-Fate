@@ -53,9 +53,8 @@ public class CriminalDeath : MonoBehaviour
         bg.gameObject.SetActive(true);
         LeanTween.alphaCanvas(bg, 1.0f, .5f);
         AudioManager.instance.PlayAudio(flatline, 1.0f);
-        Client.instance.GetComponent<EndScreen>().isActive = true;
-        Client.instance.PostToDatabase("Option-B");
         Client.instance.RetriveData();
+        Client.instance.GetComponent<EndScreen>().isActive = true;
     }
 
     public void PlayFootstep(int foot)

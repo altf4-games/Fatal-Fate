@@ -16,6 +16,7 @@ TagManager:
   - Trash
   - Dumpster
   - Bat
+  - Rain
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,7 @@ public class Client : MonoBehaviour
     private protected int OPTION_B;
     private protected string type;
     public static Client instance;
-    Firebase firebase = Firebase.CreateNew("https://game-analytics-ab746.firebaseio.com/");
+    protected Firebase firebase = Firebase.CreateNew("https://game-analytics-ab746.firebaseio.com/");
 
     private void Awake()
     {
@@ -25,10 +25,15 @@ public class Client : MonoBehaviour
 
     public void PostToDatabase(string optionType)
     {
-        type = optionType;
-        ++OPTION_A; ++OPTION_B; //Both are incremented but only one is sent to server
-        string data = (optionType == "Option-A") ? OPTION_A.ToString() : OPTION_B.ToString();
-        firebase.Child(optionType).SetValue(data, optionType);
+        type = optionType[optionType.Length - 1].ToString();
+        bool canPost = (int.Parse(SaveData.data.ReadData().Item2) == 0) ? true : false;
+        if(canPost)
+        {
+            ++OPTION_A; ++OPTION_B; //Both are incremented but only one is sent to server
+            string data = (optionType == "Option-A") ? OPTION_A.ToString() : OPTION_B.ToString();
+            firebase.Child(optionType).SetValue(data, optionType);
+            SaveData.data.WriteData(type[0], 2147483647);
+        }
     }
 
     public void RetriveData()
@@ -45,7 +50,7 @@ public class Client : MonoBehaviour
         OPTION_A = int.Parse(parsedData[0]);
         OPTION_B = int.Parse(parsedData[1]);
         if(GetComponent<EndScreen>().isActive) {
-            GetComponent<EndScreen>().GetFinalPercentage(OPTION_A,OPTION_B, type[type.Length]);
+            GetComponent<EndScreen>().GetFinalPercentage(OPTION_A,OPTION_B, type[0]);
         }
     }
 

@@ -1,5 +1,5 @@
 Gas is running out, I better refuel;4
-The next exit is about half a mile away;4
+The next gas station is about half a mile away;4
 Oh right. I don't have any money left after I escaped from prison;3
 My Alzheimer is going to get me killed;3
 I have no more options, gotta rob this store;3
@@ -9,7 +9,7 @@ Let's go;1
 ???: ....;1.25
 The system is off now.;2.5
 Time to lure him out.;2
-???: No. The bathroom is only open for customers, You gotta buy something.;3
+???: No. The bathroom is only accessible for customers, You gotta buy something.;3
 ???: hm. Fine. Follow me.;3
 Now I can loot in peace.;3
 Alright! Time to bust out;3

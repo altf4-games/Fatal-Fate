@@ -15,7 +15,6 @@ public class ShowdownTrigger : MonoBehaviour
     [SerializeField] private GameObject pickUpTruck;
     [SerializeField] private Collider staticColls;
     [SerializeField] private CanvasGroup bg;
-    [SerializeField] private GameObject client;
     private char ending;
     private NavMeshAgent agent;
     private bool doOnce = true;
@@ -24,7 +23,7 @@ public class ShowdownTrigger : MonoBehaviour
 
     private void Start()
     {
-        ending = SaveData.data.ReadData()[0];
+        ending = SaveData.data.ReadData().Item1[0];
         agent = markCut.GetComponent<NavMeshAgent>();
     }
 
@@ -33,7 +32,6 @@ public class ShowdownTrigger : MonoBehaviour
         if (other.transform.CompareTag("Player") && doOnce)
         {
             doOnce = false;
-            client.SetActive(true);
             if (ending == 'A')
             {
                 StartCoroutine(EndingA());
@@ -49,6 +47,7 @@ public class ShowdownTrigger : MonoBehaviour
     {
         markCut.SetActive(true);
         markGun.SetActive(true);
+        Client.instance.PostToDatabase("Option-A");
         yield return new WaitForSeconds(2f);
         GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters
         .FirstPerson.FirstPersonController>().enabled = false;
@@ -69,9 +68,8 @@ public class ShowdownTrigger : MonoBehaviour
         bg.gameObject.SetActive(true);
         LeanTween.alphaCanvas(bg, 1.0f, 1f);
         AudioManager.instance.PlayAudio(flatline, 1.0f);
-        Client.instance.GetComponent<EndScreen>().isActive = true;
-        Client.instance.PostToDatabase("Option-A");
         Client.instance.RetriveData();
+        Client.instance.GetComponent<EndScreen>().isActive = true;
         yield return null;
     }
 
@@ -79,6 +77,7 @@ public class ShowdownTrigger : MonoBehaviour
     {
         markCut.SetActive(true);
         markGun.SetActive(true);
+        Client.instance.PostToDatabase("Option-B");
         yield return new WaitForSeconds(2f);
         GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters
         .FirstPerson.FirstPersonController>().enabled = false;
