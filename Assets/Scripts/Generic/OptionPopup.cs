@@ -51,7 +51,13 @@ public class OptionPopup : MonoBehaviour
         if (B != null) optionB.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = B.str;
 
         if (cachedA.disabled == true) optionA.GetComponent<Image>().color = Color.red;
-        if (cachedB.disabled == true) optionB.GetComponent<Image>().color = Color.red;
+        if(cachedB != null)
+        {
+            if (cachedB.disabled == true)
+            {
+                optionB.GetComponent<Image>().color = Color.red;
+            }
+        }
 
         convoText.text = convo;
 

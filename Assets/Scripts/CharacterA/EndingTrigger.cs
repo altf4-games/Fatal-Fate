@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class EndingTrigger : MonoBehaviour
@@ -96,6 +97,7 @@ public class EndingTrigger : MonoBehaviour
 
     private string ShootHim()
     {
+        SaveData.data.WriteData('A', 0);
         StartCoroutine(ShootEnding());
         TimeLimiter.instance.StopTimer();
         return null;
@@ -126,6 +128,7 @@ public class EndingTrigger : MonoBehaviour
 
     private string SpareHim()
     {
+        SaveData.data.WriteData('B', 0);
         StartCoroutine(SpareEnding());
         TimeLimiter.instance.StopTimer();
         return null;
@@ -140,5 +143,7 @@ public class EndingTrigger : MonoBehaviour
         cutCamera.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(4.5f);
         blackBG.SetActive(true);
+        yield return new WaitForSeconds(.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

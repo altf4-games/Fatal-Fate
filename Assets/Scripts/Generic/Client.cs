@@ -6,14 +6,14 @@ public class Client : MonoBehaviour
 {
     private protected int OPTION_A;
     private protected int OPTION_B;
+    private protected string type;
     public static Client instance;
     Firebase firebase = Firebase.CreateNew("https://game-analytics-ab746.firebaseio.com/");
 
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        if (instance != null)
-            instance = this;
+        instance = this;
         firebase.OnGetSuccess += GetOKHandler;
         firebase.OnGetFailed += GetFailHandler;
     }
@@ -25,6 +25,7 @@ public class Client : MonoBehaviour
 
     public void PostToDatabase(string optionType)
     {
+        type = optionType;
         ++OPTION_A; ++OPTION_B; //Both are incremented but only one is sent to server
         string data = (optionType == "Option-A") ? OPTION_A.ToString() : OPTION_B.ToString();
         firebase.Child(optionType).SetValue(data, optionType);
@@ -43,6 +44,9 @@ public class Client : MonoBehaviour
         string[] parsedData = data.Split(',');
         OPTION_A = int.Parse(parsedData[0]);
         OPTION_B = int.Parse(parsedData[1]);
+        if(GetComponent<EndScreen>().isActive) {
+            GetComponent<EndScreen>().GetFinalPercentage(OPTION_A,OPTION_B, type[type.Length]);
+        }
     }
 
     private void GetFailHandler(Firebase sender, FirebaseError err)
