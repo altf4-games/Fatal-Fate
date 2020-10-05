@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -126,7 +125,7 @@ public class CriminalAI : MonoBehaviour
 
     private void NPC_Init02()
     {
-        Option A = new Option("No. The bathroom is only accessible for customers, You gotta buy something.", 'A', NPC_RespoA2);
+        Option A = new Option("No. The bathroom is only accessible to customers, You gotta buy something.", 'A', NPC_RespoA2);
         Option B = new Option("No. Go away!!", 'B', null, true);
         OptionPopup.instance.SetupDecision(A, B, "Can you open the bathroom doors for me, they're jammed.");
     }

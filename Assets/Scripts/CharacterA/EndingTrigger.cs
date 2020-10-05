@@ -97,7 +97,11 @@ public class EndingTrigger : MonoBehaviour
 
     private string ShootHim()
     {
-        SaveData.data.WriteData('A', 0);
+        if(SaveData.data.SaveDataExists()) {
+            SaveData.data.WriteData('A', 2147483647);
+        } else {
+            SaveData.data.WriteData('A', 0);
+        }
         StartCoroutine(ShootEnding());
         TimeLimiter.instance.StopTimer();
         return null;
@@ -124,11 +128,17 @@ public class EndingTrigger : MonoBehaviour
         cutCamera.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(4.5f);
         blackBG.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private string SpareHim()
     {
-        SaveData.data.WriteData('B', 0);
+        if(SaveData.data.SaveDataExists()) {
+            SaveData.data.WriteData('B', 2147483647);
+        } else {
+            SaveData.data.WriteData('B', 0);
+        }
+
         StartCoroutine(SpareEnding());
         TimeLimiter.instance.StopTimer();
         return null;

@@ -15,6 +15,11 @@ public class SaveData : MonoBehaviour
         savePath = System.IO.Path.Combine(Application.persistentDataPath, saveDataFile);
     }
 
+    public bool SaveDataExists()
+    {
+        return File.Exists(savePath);
+    }
+
     public void WriteData(char ending, int progress)
     {
         string xml = "ENDING=" + ending + "\n" + "PROGRESS=" + progress;

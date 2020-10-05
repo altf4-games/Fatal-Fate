@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
 using UnityEditor;
-using System.Collections;
+#endif
+using UnityEngine;
 using System.Collections.Generic;
 
 public class Path : MonoBehaviour {
@@ -36,5 +37,4 @@ public class Path : MonoBehaviour {
             Gizmos.DrawWireSphere(currentNode, 0.3f);
         }
     }
-
 }

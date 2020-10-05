@@ -11,6 +11,7 @@ public class QTE : MonoBehaviour
     [SerializeField] private float maxSpeed = 337.5f;
     [SerializeField] private Door door;
     [SerializeField] private GameObject self;
+    [SerializeField] private GameObject spaceBar;
     [SerializeField] private GameObject cutsceneTrigger;
     private bool isOverlapping = false;
     private bool isWorking = false;
@@ -27,6 +28,7 @@ public class QTE : MonoBehaviour
         moverImage.GetComponent<Image>().enabled = toggle;
         self.GetComponent<PolygonCollider2D>().enabled = toggle;
         moverImage.GetComponent<PolygonCollider2D>().enabled = toggle;
+        spaceBar.SetActive(toggle);
         GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters
         .FirstPerson.FirstPersonController>().enabled = !toggle;
     }

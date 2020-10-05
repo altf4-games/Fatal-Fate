@@ -10,6 +10,7 @@ public class Settings : MonoBehaviour
     public static Settings instance;
     [SerializeField] private PostProcessProfile profile;
     [SerializeField] private TMP_Dropdown resDropdown;
+    [SerializeField] private GameObject blackBg;
     private List<Resolution> screenResolutions;
     private int currentResolution;
     private MotionBlur motionBlur;
@@ -21,7 +22,7 @@ public class Settings : MonoBehaviour
     {
         instance = this;
         DontDestroyOnLoad(this);
-        Screen.SetResolution(480, 640, false);
+        Screen.SetResolution(540, 640, false);
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -48,6 +49,7 @@ public class Settings : MonoBehaviour
 
     public void PlayButton()
     {
+        blackBg.SetActive(true);
         Screen.SetResolution(width, height, true);
         SceneManager.LoadScene(1);
     }
