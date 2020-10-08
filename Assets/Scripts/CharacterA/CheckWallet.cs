@@ -44,12 +44,18 @@ public class CheckWallet : MonoBehaviour
 
     private string AD()
     {
+        StartCoroutine(ADseq());
+        return null;
+    }
+
+    private IEnumerator ADseq()
+    {
         spotB.SetActive(true);
-        GetComponent<StoryHandlerA>().PrintSubtitle();
-        GetComponent<StoryHandlerA>().PrintSubtitle();
         door.SetActive(true);
         helper.canLeaveCar = false;
         door.transform.parent = null;
-        return null;
+        GetComponent<StoryHandlerA>().PrintSubtitle();
+        yield return new WaitForSeconds(3f);
+        GetComponent<StoryHandlerA>().PrintSubtitle();
     }
 }

@@ -53,7 +53,7 @@ public class EndingTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && doOnce && isActive)
         {
-            print("End Cutscene Trigger");
+            //print("End Cutscene Trigger");
             FirstPersonController.pausePlayer = true;
             AudioManager.instance.PlayAudio(horrorTrans, 1.0f);
             StartCoroutine(EndingSetup());

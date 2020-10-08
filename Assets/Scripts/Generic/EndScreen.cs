@@ -23,7 +23,7 @@ public class EndScreen : MonoBehaviour
         if (OptionType == 'B') checkBox[1].SetActive(true);
 
         float total = OPTION_A + OPTION_B;
-        print(OPTION_B / total * 100);
+        //print(OPTION_B / total * 100);
 
         float markPercent = OPTION_B / total * 100;
         float stevePercent = Mathf.Abs(markPercent - 100);

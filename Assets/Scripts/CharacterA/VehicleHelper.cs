@@ -16,18 +16,14 @@ public class VehicleHelper : MonoBehaviour
     [SerializeField] private WheelCollider rr;
     [SerializeField] private WheelCollider rl;
     private int leaveCheck;
+    private Rigidbody rb;
 
-    private void Start()
+    private void Awake()
     {
-        GameController.SetCursor(false, true);
-        InitalForce();
-    }
-
-    private void InitalForce()
-    {
-        Rigidbody rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         rr.motorTorque = rearWheelDrive.maxTorque * rb.mass/2f;
         rl.motorTorque = rearWheelDrive.maxTorque * rb.mass/2f;
+        GameController.SetCursor(false, true);
     }
 
     private void Update()
