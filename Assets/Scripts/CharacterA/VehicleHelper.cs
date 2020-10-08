@@ -26,8 +26,8 @@ public class VehicleHelper : MonoBehaviour
     private void InitalForce()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
-        rr.motorTorque = rearWheelDrive.maxTorque * rb.mass/3f;
-        rl.motorTorque = rearWheelDrive.maxTorque * rb.mass/3f;
+        rr.motorTorque = rearWheelDrive.maxTorque * rb.mass/2f;
+        rl.motorTorque = rearWheelDrive.maxTorque * rb.mass/2f;
     }
 
     private void Update()

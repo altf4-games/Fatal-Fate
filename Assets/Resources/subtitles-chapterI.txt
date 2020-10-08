@@ -3,7 +3,7 @@ The next gas station is about half a mile away;4
 Oh right. I don't have any money left after I escaped from prison;3
 My Alzheimer's is going to get me killed;3
 I have no more options, gotta rob this store;3
-I should park this car and brainstorm a plan;3
+I should park this car in the parking lot and think up a plan;3
 Let's go;1
 ???: Yeah. But why'd you ask that?;1.25
 ???: ....;1.25
