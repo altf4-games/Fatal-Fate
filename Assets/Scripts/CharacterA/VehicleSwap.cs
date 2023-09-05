@@ -1,5 +1,4 @@
-﻿using Aura2API;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,13 +13,13 @@ public class VehicleSwap : MonoBehaviour
     [SerializeField] private GameObject[] realWheels;
     [SerializeField] private GameObject[] driveWheels;
     [SerializeField] private Light[] lights;
-    private AuraCamera fpsAura;
-    private AuraCamera carAura;
+    private Camera fpsAura;
+    private Camera carAura;
 
     private void Start()
     {
-        fpsAura = characterCamera.GetComponent<AuraCamera>();
-        carAura = vehicleCamera.GetComponent<AuraCamera>();
+        fpsAura = characterCamera.GetComponent<Camera>();
+        carAura = vehicleCamera.GetComponent<Camera>();
     }
 
     public void SwapPositions(bool isInsideCar)

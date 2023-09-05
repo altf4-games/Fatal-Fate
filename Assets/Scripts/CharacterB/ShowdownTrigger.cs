@@ -47,7 +47,6 @@ public class ShowdownTrigger : MonoBehaviour
     {
         markCut.SetActive(true);
         markGun.SetActive(true);
-        Client.instance.PostToDatabase("Option-A");
         yield return new WaitForSeconds(2f);
         GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters
         .FirstPerson.FirstPersonController>().enabled = false;
@@ -68,8 +67,6 @@ public class ShowdownTrigger : MonoBehaviour
         bg.gameObject.SetActive(true);
         LeanTween.alphaCanvas(bg, 1.0f, 1f);
         AudioManager.instance.PlayAudio(flatline, 1.0f);
-        Client.instance.RetriveData();
-        Client.instance.GetComponent<EndScreen>().isActive = true;
         yield return null;
     }
 
@@ -77,7 +74,6 @@ public class ShowdownTrigger : MonoBehaviour
     {
         markCut.SetActive(true);
         markGun.SetActive(true);
-        Client.instance.PostToDatabase("Option-B");
         yield return new WaitForSeconds(2f);
         GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters
         .FirstPerson.FirstPersonController>().enabled = false;

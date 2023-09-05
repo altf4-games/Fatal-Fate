@@ -1,5 +1,4 @@
-﻿using Aura2API;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -39,7 +38,7 @@ public class BoardPlan : MonoBehaviour
         yield return new WaitForSeconds(1f);
         blackBg.SetActive(false);
         player.SetActive(false);
-        boardCamera.GetComponent<AuraCamera>().enabled = true;
+        boardCamera.GetComponent<Camera>().enabled = true;
         boardCamera.gameObject.SetActive(true);
         yield return new WaitForSeconds(7.5f);
         blackBg.SetActive(true);
