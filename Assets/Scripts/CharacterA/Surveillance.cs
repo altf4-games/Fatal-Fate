@@ -59,18 +59,24 @@ public class Surveillance : MonoBehaviour
     {
         AudioManager.instance.PlayAudio(feedBack, 1.0f);
         AudioManager.instance.PlayAudio(powerDown, 1.0f);
-        survCamera.SetActive(false);
+        survPanel.SetActive(false);
         playerCamera.SetActive(true);
+        survCamera.SetActive(false);
         bgBlur.SetActive(false);
         FirstPersonController.pausePlayer = false;
         GameController.SetCursor(false, true);
-        survPanel.SetActive(false);
     }
 
     public void DeleteButton()
     {
         AudioManager.instance.PlayAudio(feedBack, 1.0f);
         canBeUnlocked = false;
+        bgBlur.SetActive(false);
+        survPanel.SetActive(false);
+        playerCamera.SetActive(true);
+        survCamera.SetActive(false);
+        FirstPersonController.pausePlayer = false;
+        GameController.SetCursor(false, true);
         StoryHandlerA.instance.PrintSubtitle(9);
         StoryHandlerA.instance.PrintSubtitle(10);
         npcSteve.layer = LayerMask.NameToLayer("Interact");

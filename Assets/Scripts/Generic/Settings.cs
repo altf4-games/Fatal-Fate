@@ -22,7 +22,6 @@ public class Settings : MonoBehaviour
     {
         instance = this;
         DontDestroyOnLoad(this);
-        Screen.SetResolution(540, 640, false);
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
